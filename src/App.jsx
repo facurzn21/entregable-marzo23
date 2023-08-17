@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Card from "./Card";
+import { Button } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [name, setName] = useState("");
@@ -30,6 +32,8 @@ function App() {
             value={name}
           />
         </label>
+        <br></br>
+        <br></br>
         <label>
           Ingresa tu color favorito (en formato HEX)
           <input
@@ -38,13 +42,17 @@ function App() {
             value={color}
           />
         </label>
-        <button type="submit">Enviar</button>
+        <br></br>
+        <br></br>
+        <Button color="primary" type="submit">
+          Enviar
+        </Button>
       </form>
+      <br></br>
+      <br></br>
       {submitted && isValid && <Card name={name} color={color} />}
     </div>
   );
 }
-
-
 
 export default App;
